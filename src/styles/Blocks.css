@@ -1,0 +1,92 @@
+.Block{
+    display: flex;
+}
+
+.Block .first{
+    flex: 1;
+    border-width: 3px;
+    border-color: black;
+    border-style: dotted;
+    background:white;
+    width: 40px;
+    height: 40px;
+    margin: 10px
+}
+
+.Block .second{
+    flex: 1;
+    border-width: 3px;
+    border-color: black;
+    border-style: dotted;
+    background:white;
+    width: 40px;
+    height: 40px;
+    margin: 10px
+}
+
+.Block .third{
+    flex: 1;
+    border-width: 3px;
+    border-color: black;
+    border-style: dotted;
+    background:white;
+    width: 40px;
+    height: 40px;
+    margin: 10px
+}
+
+.Block .fourth{
+    flex: 1;
+    border-width: 3px;
+    border-color: black;
+    border-style: dotted;
+    background:white;
+    width: 40px;
+    height: 40px;
+    margin: 10px
+}
+
+
+.Block .row1{
+    flex: 1;
+    border-width: 3px;
+    border-color: black;
+    border-style: dotted;
+    background:white;
+    width: 40px;
+    height: 40px;
+    margin: 10px
+}
+
+.Block .row2{
+    flex: 1;
+    border-width: 3px;
+    border-color: black;
+    border-style: dotted;
+    background:white;
+    width: 40px;
+    height: 40px;
+    margin: 10px
+}
+
+.Block .row3{
+    flex: 1;
+    border-width: 3px;
+    border-color: black;
+    border-style: dotted;
+    background:white;
+    width: 40px;
+    height: 40px;
+    margin: 10px
+}
+
+.Block .row4{
+    flex: 1;
+    border-width: 3px;
+    border-color: black;
+    border-style: dotted;
+    background:white;
+    width: 40px;
+    height: 40px;
+    margin: 10px
+}

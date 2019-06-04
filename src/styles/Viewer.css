@@ -1,0 +1,64 @@
+
+.MainContainer{
+    justify-content: center;
+    text-align: center;
+    justify-self: center
+    
+}
+
+.MainContainer h1{
+    font-size: 50px;
+    font-family: 'Palatino Linotype';
+  
+}
+
+.MainContainer li{
+    list-style: none;
+    margin:5px;
+    display: inline;
+    
+}
+
+.MainContainer .button1{
+    background: red;
+    font-size: 30px;
+    color: white
+}
+.MainContainer .button1:hover{
+    background: red;
+    font-size: 40px;
+    color: white
+}
+
+.MainContainer .button2{
+    background: blue;
+    font-size: 30px;
+    color: white
+}
+.MainContainer .button2:hover{
+    background:blue;
+    font-size: 40px;
+    color: white
+}
+
+.MainContainer .button3{
+    background: purple;
+    font-size: 30px;
+    color: white
+}
+.MainContainer .button3:hover{
+    background:purple;
+    font-size: 40px;
+    color: white
+}
+
+.MainContainer .button4{
+    background: yellow;
+    font-size: 30px;
+    color: white
+}
+.MainContainer .button4:hover{
+    background: yellow;
+    font-size: 40px;
+    color: white
+}
