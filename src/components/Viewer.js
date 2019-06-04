@@ -44,13 +44,32 @@ class Viewer extends Component {
  
         var newDiv = document.createElement('div'); 
         newDiv.className= ".Block . first"
+        newDiv.addEventListener("click", function(){ 
+            if(newDiv.style.backgroundColor === 'red'){
+            newDiv.style.backgroundColor='white' }
+            else {
+                newDiv.style.backgroundColor='red' 
+            }
+        }
+            )
         // add the newly created element and its content into the DOM 
         var currentDiv = document.querySelector(".Block"); 
         currentDiv.appendChild(newDiv); 
     }
     handleColorBlueRow = () => {
-        let blocks = document.querySelector(".Block .row2");
-        blocks.style.backgroundColor =  "blue"
+        var newDiv = document.createElement('div'); 
+        newDiv.className= ".Block . first"
+        newDiv.addEventListener("click", function(){ 
+            if(newDiv.style.backgroundColor === 'blue'){
+            newDiv.style.backgroundColor='white' }
+            else {
+                newDiv.style.backgroundColor='blue' 
+            }
+        }
+            )
+        // add the newly created element and its content into the DOM 
+        var currentDiv = document.querySelector(".Block"); 
+        currentDiv.appendChild(newDiv); 
     }
     handleColorPurpleRow = () => {
         let blocks = document.querySelector(".Block .row3");
@@ -101,7 +120,7 @@ class Viewer extends Component {
                    ROWS
                     </button >
                     <button className=""
-                    // onClick={this.handleColorRed}
+                    onClick={this.handleColorBlueRow}
                     >
                   COLUMNS
                     </button >

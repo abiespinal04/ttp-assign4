@@ -4,18 +4,18 @@ import '../styles/Blocks.css'
 const Blocks = (props) => {
     return ( 
         <div className="Block">
-            <div className="Block first">
+            {/* <div className="Block first"> */}
             
-            </div>
+            {/* </div>
             <div className="Block second">
             
             </div>
             <div className="Block third">
             
             </div>
-            <div className="Block fourth">
+            <div className="Block fourth"> */}
             
-            </div>
+            {/* </div> */}
         </div>
      );
 }
