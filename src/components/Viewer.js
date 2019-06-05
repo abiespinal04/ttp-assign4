@@ -8,28 +8,25 @@ class Viewer extends Component {
 
     handleColorRed = () => {
         
-        let blocks = document.querySelector(".Block .first");
-        if(blocks.style.backgroundColor === 'red'){
-        blocks.style.backgroundColor =  "white"
-        } else {
-            blocks.style.backgroundColor = 'red'
-        }
+        let newBlock= document.querySelector(".Block .red");
+       let blocks = document.querySelectorAll(".Block .first");
+        blocks.forEach(function(block) {
+            block.onmouseover = function(){block.style.backgroundColor = 'red'};
+           });
     } 
     handleColorBlue = () => {
-        let blocks = document.querySelector(".Block .second");
-        if(blocks.style.backgroundColor === 'blue'){
-        blocks.style.backgroundColor =  "white"
-        } else {
-            blocks.style.backgroundColor = 'blue'
-        }
+        let newBlock= document.querySelector(".Block .blue");
+       let blocks = document.querySelectorAll(".Block .first");
+        blocks.forEach(function(block) {
+            block.onmouseover = function(){block.style.backgroundColor = 'blue'};
+           });
     }
-    handleColorPurple = () => {
-        let blocks = document.querySelector(".Block .third");
-        if(blocks.style.backgroundColor === 'purple'){
-        blocks.style.backgroundColor =  "white"
-        } else {
-            blocks.style.backgroundColor = 'purple'
-        }
+    handleColorReset = () => {
+        let blocks = document.querySelectorAll(".Block .first");
+     
+        blocks.forEach(function(userItem) {
+           userItem.style.backgroundColor = "white"
+          });
     }
     handleColorYellow = () => {
         let blocks = document.querySelector(".Block .fourth");
@@ -41,8 +38,44 @@ class Viewer extends Component {
     }
 
     handleColorRedRow = () => {
- 
-        var newDiv = document.createElement('div'); 
+    
+        let newDiv = []
+        for(let i = 0; i < 10; i++){
+        newDiv[i]= document.createElement('div'); 
+        newDiv[i].className= ".Block . first"
+        newDiv[i].addEventListener("click", function(){ 
+            if(newDiv[i].style.backgroundColor === 'red'){
+            newDiv[i].style.backgroundColor='white' }
+            else {
+                newDiv[i].style.backgroundColor='red' 
+            }
+        }
+            )
+        // add the newly created element and its content into the DOM 
+        var currentDiv = document.querySelector(".Block"); 
+        currentDiv.appendChild(newDiv[i]);
+    } 
+    }
+    handleColorBlueRow = () => {
+        let newDiv = []
+        for(let i = 0; i < 10; i++){
+        newDiv[i]= document.createElement('div'); 
+        newDiv[i].className= ".Block . first"
+        newDiv[i].addEventListener("click", function(){ 
+            if(newDiv[i].style.backgroundColor === 'blue'){
+            newDiv[i].style.backgroundColor='white' }
+            else {
+                newDiv[i].style.backgroundColor='blue' 
+            }
+        }
+            )
+        // add the newly created element and its content into the DOM 
+        var currentDiv = document.querySelector(".Block"); 
+        currentDiv.appendChild(newDiv[i]);
+    } 
+    }
+    handleColorRedCol = () => {
+       var newDiv = document.createElement('div'); 
         newDiv.className= ".Block . first"
         newDiv.addEventListener("click", function(){ 
             if(newDiv.style.backgroundColor === 'red'){
@@ -56,7 +89,7 @@ class Viewer extends Component {
         var currentDiv = document.querySelector(".Block"); 
         currentDiv.appendChild(newDiv); 
     }
-    handleColorBlueRow = () => {
+    handleColorBlueCol = () => {
         var newDiv = document.createElement('div'); 
         newDiv.className= ".Block . first"
         newDiv.addEventListener("click", function(){ 
@@ -70,14 +103,6 @@ class Viewer extends Component {
         // add the newly created element and its content into the DOM 
         var currentDiv = document.querySelector(".Block"); 
         currentDiv.appendChild(newDiv); 
-    }
-    handleColorPurpleRow = () => {
-        let blocks = document.querySelector(".Block .row3");
-        blocks.style.backgroundColor =  "purple"
-    }
-    handleColorYellowRow = () => {
-        let blocks = document.querySelector(".Block .row4");
-        blocks.style.backgroundColor =  "yellow"
     }
 
 
@@ -102,7 +127,7 @@ class Viewer extends Component {
                     ROWS
                     </button >
                     <button className=""
-                    // onClick={this.handleColorRedRow}
+                    onClick={this.handleColorRedCol}
                     >
                     COLUMNS
                     </button >
@@ -115,12 +140,12 @@ class Viewer extends Component {
                     BLUE
                     </button>
                     <button className=""
-                    // onClick={this.handleColorRed}
+                      onClick={this.handleColorBlueRow}
                     >
                    ROWS
                     </button >
                     <button className=""
-                    onClick={this.handleColorBlueRow}
+                    onClick={this.handleColorBlueCol}
                     >
                   COLUMNS
                     </button >
@@ -128,18 +153,18 @@ class Viewer extends Component {
                     </li>
                     <li>
                     <button className="MainContainer button3"
-                      onClick={this.handleColorPurple}>
-                    PURPLE
+                      onClick={this.handleColorReset}>
+                   Reset
                     </button>
                     <button className=""
                     // onClick={this.handleColorRed}
                     >
-                   ROWS
+                   Delete ROWS
                     </button >
                     <button className=""
                     // onClick={this.handleColorRed}
                     >
-                   COLUMNS
+                   Delete COLUMNS
                     </button >
 
 
