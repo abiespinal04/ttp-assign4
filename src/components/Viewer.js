@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/Viewer.css'
+import '../styles/Blocks.css'
 import Blocks from './Blocks'
 
 
@@ -42,6 +43,8 @@ class Viewer extends Component {
         let newDiv = []
         for(let i = 0; i < 10; i++){
         newDiv[i]= document.createElement('div'); 
+        let text = document.createTextNode("R")
+        newDiv[i].appendChild(text)
         newDiv[i].className= ".Block . first"
         newDiv[i].addEventListener("click", function(){ 
             if(newDiv[i].style.backgroundColor === 'red'){
@@ -56,10 +59,23 @@ class Viewer extends Component {
         currentDiv.appendChild(newDiv[i]);
     } 
     }
+
+    deleteColorRedRow= () => {
+    
+        let newDiv = []
+        // for(let i = 0; i < 10; i++){
+        // document.querySelector(".Block . first").remove();
+        let blocks = document.querySelectorAll(".Block .first");
+        blocks.forEach(function(block) {
+            block.remove()
+           });
+    }
     handleColorBlueRow = () => {
         let newDiv = []
         for(let i = 0; i < 10; i++){
         newDiv[i]= document.createElement('div'); 
+        let text = document.createTextNode("B")
+        newDiv[i].appendChild(text)
         newDiv[i].className= ".Block . first"
         newDiv[i].addEventListener("click", function(){ 
             if(newDiv[i].style.backgroundColor === 'blue'){
@@ -124,11 +140,17 @@ class Viewer extends Component {
                     <button className=""
                     onClick={this.handleColorRedRow}
                     >
-                    ROWS
+                    ADD RED ROWS
+                    </button >
+                    <button className=""
+                    onClick={this.deleteColorRedRow}
+                    >
+                   DELETE ROWS
                     </button >
                     <button className=""
                     onClick={this.handleColorRedCol}
                     >
+                        
                     COLUMNS
                     </button >
                     
@@ -142,13 +164,13 @@ class Viewer extends Component {
                     <button className=""
                       onClick={this.handleColorBlueRow}
                     >
-                   ROWS
+                    ADD BLUE ROWS
                     </button >
-                    <button className=""
+                    {/* <button className=""
                     onClick={this.handleColorBlueCol}
                     >
                   COLUMNS
-                    </button >
+                    </button > */}
 
                     </li>
                     <li>
@@ -156,34 +178,7 @@ class Viewer extends Component {
                       onClick={this.handleColorReset}>
                    Reset
                     </button>
-                    <button className=""
-                    // onClick={this.handleColorRed}
-                    >
-                   Delete ROWS
-                    </button >
-                    <button className=""
-                    // onClick={this.handleColorRed}
-                    >
-                   Delete COLUMNS
-                    </button >
 
-
-                    </li>
-                    <li>
-                    <button className="MainContainer button4"
-                      onClick={this.handleColorYellow}>
-                    YELLOW
-                    </button>
-                    <button className=""
-                    // onClick={this.handleColorRed}
-                    >
-                  ROWS
-                    </button >
-                    <button className=""
-                    // onClick={this.handleColorRed}
-                    >
-                    COLUMNS
-                    </button >
 
                     </li>
                 </ul>

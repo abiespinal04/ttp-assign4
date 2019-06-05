@@ -1,5 +1,15 @@
+button{
+    margin:10px
+}
+
+#myTable{
+    
+}
+
 .Block{
     display: flex;
+    width: 100%;
+   background-color: #f4f5f7
 }
 
 .Block .first{
